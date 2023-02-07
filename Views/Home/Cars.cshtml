@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Cars";
+}
+
+@Scripts.Render("~/bundles/CarServices")
+
+<h2>Cars</h2>
+
+<div class="CarEntry">
+    <img id="imgOne" src="~/Content/Images/FH5_Hennessey_Venom_F5_Large.png" />
+    <button type="button" onclick='document.getElementById("imgOne").style.border = "thin solid red"'>Click Me!</button>
+</div>
+<div class="CarEntry">
+    <img id="imgTwo" src="~/Content/Images/FH5_Lotus_Evija_Large.png" />
+    <button type="button" onclick="SetBlueBorder()">Click Me!</button>
+</div>
+<div class="CarEntry">
+    <img id="imgThree" src="~/Content/Images/HOR_XB1_Lambo_Aventador_J.png" />
+    <button type="button" onclick="SetPurpleBorder()">Click Me!</button>
+</div>
+
+<br />
+
+<div>
+    <p>All images free use under CC-BY-SA - Sourced from WikiPedia</p>
+</div>
+
+
+<style>
+    .CarEntry {
+        margin: auto;
+        width: 50%;
+    }
+</style>
+
+<script>
+    function SetBlueBorder() {
+        document.getElementById("imgTwo").style.border = "thin solid blue";
+    }
+</script>
