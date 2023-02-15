@@ -34,3 +34,34 @@ textarea {
     background-color: #777;
     border-color: #fff
 }
+
+.character-entry {
+    background-color: aquamarine;
+    padding: 15px;
+}
+
+.table {
+    border-collapse: separate;
+    border: 1px solid;
+    padding: 4px;
+}
+
+.dl-horizontal {
+    border: groove;
+}
+
+.dl-horizontal dt::after {
+    content: ":";
+    font-weight: bold; 
+}
+
+.dl-horizontal dd {
+    text-decoration: underline;
+}
+
+.form-control {
+    border: 1px solid green;
+    padding: 2px;
+}
+
+

@@ -77,3 +77,7 @@ C:\Users\dfmcd\Documents\GitHub\ApplicationDesignWebApp\obj\Debug\ApplicationDes
 C:\Users\dfmcd\Documents\GitHub\ApplicationDesignWebApp\obj\Debug\ApplicationDesignWebApp.csproj.CopyComplete
 C:\Users\dfmcd\Documents\GitHub\ApplicationDesignWebApp\obj\Debug\ApplicationDesignWebApp.dll
 C:\Users\dfmcd\Documents\GitHub\ApplicationDesignWebApp\obj\Debug\ApplicationDesignWebApp.pdb
+C:\Users\dfmcd\Documents\GitHub\ApplicationDesignWebApp\bin\EntityFramework.dll
+C:\Users\dfmcd\Documents\GitHub\ApplicationDesignWebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\dfmcd\Documents\GitHub\ApplicationDesignWebApp\bin\EntityFramework.xml
+C:\Users\dfmcd\Documents\GitHub\ApplicationDesignWebApp\bin\EntityFramework.SqlServer.xml
