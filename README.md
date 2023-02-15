@@ -1,3 +1,3 @@
 # ApplicationDesignWebApp
  
-[Part Two](https://github.com/mcdonaldduncan/ConsoleServiceApp)
+[Week Two: Part Two](https://github.com/mcdonaldduncan/ConsoleServiceApp)
