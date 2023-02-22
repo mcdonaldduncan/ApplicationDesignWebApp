@@ -38,6 +38,10 @@
         <th>
             @Html.DisplayNameFor(model => model.NPC)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Maps)
+        </th>
+
         <th></th>
     </tr>
 
@@ -70,12 +74,38 @@
         <td>
             @Html.DisplayFor(modelItem => item.NPC)
         </td>
+
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @if (item.Maps != null && item.Maps.Count > 0)
+            {
+                int i = 1;
+                foreach (var map in item.Maps)
+                {
+
+                    @Html.DisplayFor(modelItem => map.Map_Name)
+                    if (i != item.Maps.Count)
+                    {
+                        <text>
+                            | 
+                        </text>
+                    }
+                    i++;
+                }
+            }
+            else
+            {
+                <p>
+                    None
+                </p>
+            }
         </td>
-    </tr>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
 }
 
 </table>

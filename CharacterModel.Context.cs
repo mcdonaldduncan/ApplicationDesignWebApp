@@ -26,5 +26,6 @@ namespace ApplicationDesignWebApp
         }
     
         public virtual DbSet<Character> Characters { get; set; }
+        public virtual DbSet<Map> Maps { get; set; }
     }
 }

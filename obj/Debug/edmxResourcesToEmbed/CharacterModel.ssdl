@@ -15,7 +15,32 @@
     <Property Name="HP_Max" Type="int" Nullable="false" />
     <Property Name="NPC" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="Map">
+    <Key>
+      <PropertyRef Name="MapID" />
+    </Key>
+    <Property Name="MapID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CharacterID" Type="int" Nullable="false" />
+    <Property Name="Map_Name" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Map_Character1">
+    <End Role="Character" Type="Self.Character" Multiplicity="1" />
+    <End Role="Map" Type="Self.Map" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Character">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Map">
+        <PropertyRef Name="CharacterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="PROG455SP23ModelStoreContainer">
     <EntitySet Name="Character" EntityType="Self.Character" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Map" EntityType="Self.Map" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Map_Character1" Association="Self.FK_Map_Character1">
+      <End Role="Character" EntitySet="Character" />
+      <End Role="Map" EntitySet="Map" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

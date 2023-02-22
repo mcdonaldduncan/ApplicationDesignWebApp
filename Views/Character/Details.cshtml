@@ -82,6 +82,20 @@
             @Html.DisplayFor(model => model.NPC)
         </dd>
 
+        @if (Model != null && Model.Maps.Count > 0)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Maps)
+            </dt>
+        }
+
+        @foreach (var map in Model.Maps)
+        {
+            <dd>
+                @Html.DisplayFor(model => map.Map_Name)
+            </dd>
+        }
+
     </dl>
 </div>
 <p>

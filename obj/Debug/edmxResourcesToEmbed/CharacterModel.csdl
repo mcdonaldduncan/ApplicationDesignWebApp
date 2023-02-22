@@ -14,8 +14,35 @@
     <Property Name="HP_Initial" Type="Int32" Nullable="false" />
     <Property Name="HP_Max" Type="Int32" Nullable="false" />
     <Property Name="NPC" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Maps" Relationship="PROG455SP23Model.FK_Map_Character1" FromRole="Character" ToRole="Map" />
   </EntityType>
   <EntityContainer Name="PROG455SP23Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Characters" EntityType="Self.Character" />
+    <EntitySet Name="Maps" EntityType="PROG455SP23Model.Map" />
+    <AssociationSet Name="FK_Map_Character1" Association="PROG455SP23Model.FK_Map_Character1">
+      <End Role="Character" EntitySet="Characters" />
+      <End Role="Map" EntitySet="Maps" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Map">
+    <Key>
+      <PropertyRef Name="MapID" />
+    </Key>
+    <Property Name="MapID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CharacterID" Type="Int32" Nullable="false" />
+    <Property Name="Map_Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Character" Relationship="PROG455SP23Model.FK_Map_Character1" FromRole="Map" ToRole="Character" />
+  </EntityType>
+  <Association Name="FK_Map_Character1">
+    <End Type="PROG455SP23Model.Character" Role="Character" Multiplicity="1" />
+    <End Type="PROG455SP23Model.Map" Role="Map" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Character">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Map">
+        <PropertyRef Name="CharacterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
